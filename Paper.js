@@ -1,19 +1,23 @@
 class Paper{
 constructor(x,y) {
     var options = {
-        isStatic:true,
+        //isStatic:false,
         restitution:0.3,
         friction:0.5,
         density:1.2
     }
-    this.body = Bodies.ellipse(x, y,50,50, options);
+    this.body = Bodies.circle(x, y,70,options);
     this.height = 50;
     this.width = 50;
+
+    //World.add(world, this.body);
 }
-display()
- pos =this.body.position;
+display() {
+var pos = this.body.position;
       push();
-      translate(posX, posY);
+      translate(pos.x, pos.x);
       ellipseMode(CENTER);
+      ellipse(0,0,this.width,this.height);
       pop();
+}
 }

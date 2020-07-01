@@ -35,10 +35,18 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-  paper.display();
+  paper.display(200,200);
+
+
   
   drawSprites();
  
+}
+
+function keyPressed() {
+if (keyCode === UP_ARROW) {
+	paper.body.force(2,2);
+}
 }
 
 
