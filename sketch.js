@@ -12,19 +12,17 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 
-	paper = new Paper(200,200);
-
-
 	engine = Engine.create();
 	world = engine.world;
 
-	//packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1.5, isStatic:false});
-	//World.add(world, packageBody);
-	
+
+	paper = new Paper(200,100);
+	dustbin = new Dustbin(100,600);
+
 
 	//Create a Ground
-	//ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
- 	//World.add(world, ground);
+	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
+ 	World.add(world, ground);
 
 
 	Engine.run(engine);
@@ -35,7 +33,10 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-  paper.display(200,200);
+  paper.display();
+  dustbin.display();
+
+
 
 
   
@@ -45,7 +46,7 @@ function draw() {
 
 function keyPressed() {
 if (keyCode === UP_ARROW) {
-	paper.body.force(2,2);
+	Matter.Body.applyForce(paper.body,paper.body.position,{x:0,y:-200});
 }
 }
 

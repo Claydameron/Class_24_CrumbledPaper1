@@ -1,7 +1,7 @@
 class Paper{
 constructor(x,y) {
     var options = {
-        //isStatic:false,
+        isStatic:false,
         restitution:0.3,
         friction:0.5,
         density:1.2
@@ -10,7 +10,7 @@ constructor(x,y) {
     this.height = 50;
     this.width = 50;
 
-    //World.add(world, this.body);
+    World.add(world, this.body);
 }
 display() {
 var pos = this.body.position;
