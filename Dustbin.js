@@ -34,8 +34,9 @@ class Dustbin
 			rectMode(CENTER)
 			//strokeWeight(4);
 			angleMode(RADIANS)
-			fill(255)
-			stroke(255)
+			fill(0,255,0)
+			
+			stroke(0,255,0)
 			rotate(this.angle)
 			rect(0,0,this.wallThickness, this.dustbinHeight);
 			pop()
@@ -43,10 +44,11 @@ class Dustbin
 			push()
 			translate(posRight.x, posRight.y);
 			rectMode(CENTER)
-			//strokeWeight(4);
-			stroke(255)
+			//strokeWeight(4);   	
+
+			stroke(0,255,0)
 			angleMode(RADIANS)
-			fill(255)
+			fill(0,255,0)
 			rotate(-1*this.angle)
 			rect(0,0,this.wallThickness, this.dustbinHeight);
 			pop()
@@ -55,9 +57,9 @@ class Dustbin
 			translate(posBottom.x, posBottom.y);
 			rectMode(CENTER)
 			//strokeWeight(4);
-			stroke(255)
+			stroke(0,255,0)
 			angleMode(RADIANS)
-			fill(255)
+			fill(0,255,0)
 			rect(0,0,this.dustbinWidth, this.wallThickness);
 			pop()
 			

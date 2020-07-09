@@ -15,7 +15,9 @@ constructor(x,y) {
 display() {
 var pos = this.body.position;
       push();
-      translate(pos.x, pos.x);
+      translate(pos.x, pos.y);
+      stroke("black");
+      fill("lightBlue");
       ellipseMode(CENTER);
       ellipse(0,0,this.width,this.height);
       pop();
